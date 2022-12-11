@@ -33,25 +33,27 @@ const addTodo = ()=>{
     todolist.appendChild(divlist)
     textinput.value = ''
 
-    const buttonTrash = document.createElement('button')
-    buttonTrash.innerHTML = '<i class="fa-solid fa-check"></i>'
-    buttonTrash.classList.add('buttonTrash')
-    divlist.appendChild(buttonTrash)
+    //checked
+    const checked = document.createElement('button')
+    checked.innerHTML = '<i class="fa-solid fa-check"></i>'
+    checked.id = 'checked'
+    divlist.appendChild(checked)
     
-    const buttonList = document.createElement('button')
-    buttonList.innerHTML = '<i class="fa-sharp fa-solid fa-trash"></i>'
-    buttonList.classList.add('buttonList')
-    divlist.appendChild(buttonList)
+    //trash
+    const trash = document.createElement('button')
+    trash.innerHTML = '<i class="fa-sharp fa-solid fa-trash"></i>'
+    trash.id = 'trash'
+    divlist.appendChild(trash)
+    
 
 
-    buttonList.addEventListener('click', (e)=>{
+    trash.addEventListener('click', (e)=>{
         e.preventDefault()
         divlist.remove()
     })
 
-    buttonTrash.addEventListener('click', (e)=>{
-        const itemTrash = item
-        itemTrash.classList.toggle('checked')
+    checked.addEventListener('click', (e)=>{
+        divlist.classList.toggle('checked1')
         
     })
 
